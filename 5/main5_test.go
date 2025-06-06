@@ -2,7 +2,6 @@ package main
 
 import (
 	"reflect"
-	"sort"
 	"testing"
 )
 
@@ -38,10 +37,8 @@ func TestIntersection(t *testing.T) {
 			}
 
 			sortedResult := make([]int, len(intersections))
-			sort.Ints(sortedResult)
 
 			sortedExpected := make([]int, len(tt.expectedIntersect))
-			sort.Ints(sortedExpected)
 
 			if !reflect.DeepEqual(sortedResult, sortedExpected) {
 				t.Errorf("intersection() intersections = %v, expected %v", intersections, tt.expectedIntersect)
